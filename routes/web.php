@@ -17,9 +17,7 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-//$router->get('/books', ['uses' => 'BookController@getBooks']);
-$router->get('/books', 'BookController@index');
-$router->post('/books', 'BookController@add');
-$router->get('/books/{id}', 'BookController@show');
-$router->put('/books/{id}', 'BookController@update');
-$router->delete('/books/{id}', 'BookController@delete');
+//$router->get('/logs', ['uses' => 'AuthenticationLogController@getLogs']);
+$router->get('/logs', 'AuthenticationLogController@index');
+$router->get('/logs/{id}', 'AuthenticationLogController@show');
+$router->delete('/logs/{id}', 'AuthenticationLogController@delete');
