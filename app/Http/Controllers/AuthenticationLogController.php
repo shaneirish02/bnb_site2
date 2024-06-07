@@ -39,6 +39,19 @@ class AuthenticationLogController extends Controller {
 
     }
 
+    public function add(Request $request) {
+        
+        $rules = [
+            'auth_id' => 'required|max:20',
+        ];
+
+        $this->validate($request, $rules);
+
+        $logs = AuthenticationLog::create($request->all());
+
+        return $this->successResponse($logs, Response::HTTP_CREATED);
+    }
+
     /**
      * Obtains and show one log
      * @return Illuminate\Http\Response

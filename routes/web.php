@@ -19,5 +19,6 @@ $router->get('/', function () use ($router) {
 
 //$router->get('/logs', ['uses' => 'AuthenticationLogController@getLogs']);
 $router->get('/logs', 'AuthenticationLogController@index');
+$router->post('/logs', 'AuthenticationLogController@add');
 $router->get('/logs/{id}', 'AuthenticationLogController@show');
 $router->delete('/logs/{id}', 'AuthenticationLogController@delete');
